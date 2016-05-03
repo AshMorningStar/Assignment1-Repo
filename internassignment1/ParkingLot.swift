@@ -17,8 +17,9 @@ class ParkingLot{
     private var _rates: String!
     private var _publicHolidayRates: String!
     private var _dataProvider: String!
-  //  private var _count :String!
-   // private var _status: Int!
+    private var _longitude: String!
+    private var _latitude:String!
+    
     
     var id:Int{
         return _id
@@ -50,18 +51,17 @@ class ParkingLot{
     }
     
     
-   /* var count:String{
-        return _count
+    var longitude:String{
+        return _longitude
+    }
+ 
+    var latitude:String{
+        return _latitude
     }
     
-    var status:Int{
-        return _status
-    } */
- 
     
     
-    
-    init(id: Int,zone:String,name:String,capacity:Int,rates:String,publicHolidayRates:String,dataProvider:String){
+    init(id: Int,zone:String,name:String,capacity:Int,rates:String,publicHolidayRates:String,dataProvider:String,longitude:String,latitude:String){
         _id = id
         _zone = zone
         _name = name
@@ -69,6 +69,8 @@ class ParkingLot{
         _rates = rates
         _publicHolidayRates = publicHolidayRates
         _dataProvider = dataProvider
+        _longitude = longitude
+        _latitude = latitude
         
     }
     

@@ -9,34 +9,40 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import MapKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     
     @IBOutlet var tableView:UITableView!
     @IBOutlet var searchBar: UISearchBar!
     var inSearchMode = false
+    var refreshControl: UIRefreshControl!
+ 
     
-    
-    //var namesStorage: [String] = []
     var parkingSpaces = [ParkingLot]()
-    var filteredParkingSpaces = [ParkingLot]()
-    
+ 
     var dynamicParkingSpaces = [DynamicParking]()
     
     var combinedDataArray = [CombinedData]()
     var filteredCombinedDataArray = [CombinedData]()
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+       
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl) // not required when using UITableViewController
         
     
-        retrieveStaticParkingInfo()
+        searchBar.returnKeyType = UIReturnKeyType.Done
+        retrieveStaticParkingInfo() //retreives static info,then dynamic info,then syncs them into a combinedDataArray
+        
+        
         
         
         
@@ -45,14 +51,26 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
+    func refresh(){
+        combinedDataArray = [CombinedData]()
+        parkingSpaces = [ParkingLot]()
+        filteredCombinedDataArray = [CombinedData]()
+        dynamicParkingSpaces = [DynamicParking]()
+        
+        retrieveStaticParkingInfo()
+        self.tableView.reloadData()
+        
+        refreshControl.endRefreshing()
+    }
+    
   
     
     func syncData(){
-        for var x = 0;x < parkingSpaces.count ;x++ {
+        for var x = 0;x < parkingSpaces.count ;x += 1 {
             
-            for var y = 0;y<dynamicParkingSpaces.count; y++ {
+            for var y = 0;y<dynamicParkingSpaces.count; y += 1 {
             if parkingSpaces[x].id == dynamicParkingSpaces[y].id{
-               let combinedData = CombinedData(id: parkingSpaces[x].id, zone: parkingSpaces[x].zone, name: parkingSpaces[x].name, capacity: parkingSpaces[x].capacity, rates: parkingSpaces[x].rates, publicHolidayRates: parkingSpaces[x].publicHolidayRates, dataProvider: parkingSpaces[x].dataProvider, vacancy: dynamicParkingSpaces[x].vacancy, status: dynamicParkingSpaces[x].status)
+               let combinedData = CombinedData(id: parkingSpaces[x].id, zone: parkingSpaces[x].zone, name: parkingSpaces[x].name, capacity: parkingSpaces[x].capacity, rates: parkingSpaces[x].rates, publicHolidayRates: parkingSpaces[x].publicHolidayRates, dataProvider: parkingSpaces[x].dataProvider, vacancy: dynamicParkingSpaces[x].vacancy, status: dynamicParkingSpaces[x].status,longitude: parkingSpaces[x].longitude,latitude: parkingSpaces[x].latitude)
                 
                 combinedDataArray.append(combinedData)
             
@@ -74,14 +92,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 
                 let data = json["data"].arrayValue //retrieves the "data" from json
                 
-                /*for names in data{  //for each "name" form the data arrray,store it in a String array,called namesStorage
-                 let name = names["name"].stringValue
-                 
-                 // print(name)
-                 self.namesStorage.append(name)
-                 
-                 }*/
-                
                 for items in data{
                     let id = items["id"].intValue
                     let zone = items["zone"].stringValue
@@ -90,12 +100,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     let rates = items["rates"].stringValue
                     let publicHoildayRates = items["rates"].stringValue
                     let dataProvider = items["data_provider"].stringValue
+                    let longitude = items["lon"].stringValue
+                    let latitude = items["lat"].stringValue
+                   // print(longitude)
                     
-                    let parkingLot = ParkingLot(id: id, zone: zone, name: name, capacity: capacity, rates: rates, publicHolidayRates: publicHoildayRates, dataProvider: dataProvider)
+                    let parkingLot = ParkingLot(id: id, zone: zone, name: name, capacity: capacity, rates: rates, publicHolidayRates: publicHoildayRates, dataProvider: dataProvider,longitude: longitude,latitude: latitude)
                     
                     self.parkingSpaces.append(parkingLot)
                                     }
                 
+               
                 self.retrieveDynamicParkingInfo()
                 //self.tableView.reloadData()
                 
@@ -128,8 +142,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 }
                 
                 self.syncData()
-                //self.tableView.reloadData()
-
+                
                 
             }
            
@@ -152,22 +165,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
-        print("it did go here")
-        if let cell = tableView.dequeueReusableCellWithIdentifier("detailsCell", forIndexPath: indexPath) as? CustomTableViewCell{
+               if let cell = tableView.dequeueReusableCellWithIdentifier("detailsCell", forIndexPath: indexPath) as? CustomTableViewCell{
         
-            //let parking: ParkingLot!
-           // let dynamic: DynamicParking!
-            
-            let combinedData:CombinedData!
+                     let combinedData:CombinedData!
             
             if inSearchMode{
-              //  parking = self.filteredParkingSpaces[indexPath.row]
-                //dynamic = self.dynamicParkingSpaces[indexPath.row]
                 combinedData = self.filteredCombinedDataArray[indexPath.row]
                 
             }else{
-               // parking = self.parkingSpaces[indexPath.row]
-               // dynamic = self.dynamicParkingSpaces[indexPath.row]
                 combinedData = self.combinedDataArray[indexPath.row]
                 
                 
@@ -190,18 +195,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // let selectedParkingName = namesStorage[indexPath.row]
-        //   print("User has selected \(selectedParkingName)")
-        
-        //var parkingLot:ParkingLot!
         var combinedData:CombinedData!
         
         if inSearchMode{
-           // parkingLot = filteredParkingSpaces[indexPath.row]
+      
             combinedData = filteredCombinedDataArray[indexPath.row]
             
         }else{
-          //  parkingLot = parkingSpaces[indexPath.row]
+       
             combinedData = combinedDataArray[indexPath.row]
         }
         
@@ -216,23 +217,29 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if searchBar.text == nil || searchBar.text == "" {
             inSearchMode = false
             view.endEditing(true) //by ending the editing,the keyboard will then hide
-            
+            tableView.reloadData()
             
         }else{
             inSearchMode = true
             
             let lowerCase = searchBar.text!.lowercaseString
             
-            //filteredParkingSpaces = parkingSpaces.filter({$0.name.rangeOfString(lowerCase) != nil})
             filteredCombinedDataArray = combinedDataArray.filter({$0.name.rangeOfString(lowerCase) != nil})
+           
+            tableView.reloadData()
+
             
         }
         
-        tableView.reloadData()
+      //  tableView.reloadData()
 
         
     }
     
+
+    
+    
+      
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "LotDetailsVC"{
             if let detailsVC = segue.destinationViewController as? LotDetailsVC{

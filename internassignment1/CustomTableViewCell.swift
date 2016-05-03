@@ -25,7 +25,7 @@ class CustomTableViewCell: UITableViewCell {
         
         self.nameLbl.text = combinedData.name
         self.zoneLbl.text = combinedData.zone
-        self.lotsVacancyLbl.text = combinedData.vacancy
+        self.lotsVacancyLbl.text = combinedData.vacancy + " Available Lots"
         
         
         

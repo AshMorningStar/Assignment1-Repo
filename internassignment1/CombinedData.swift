@@ -18,6 +18,8 @@ class CombinedData{
     private var _dataProvider: String!
     private var _vacancy :String!
     private var _status: Int!
+    private var _longitude: String!
+    private var _latitude:String!
     
     var id:Int{
         return _id
@@ -48,8 +50,7 @@ class CombinedData{
         return _dataProvider
     }
     
-    
-     var vacancy:String{
+    var vacancy:String{
      return _vacancy
      }
      
@@ -57,7 +58,15 @@ class CombinedData{
      return _status
      }
     
-    init(id: Int,zone:String,name:String,capacity:Int,rates:String,publicHolidayRates:String,dataProvider:String,vacancy:String,status:Int){
+    var longitude:String{
+        return _longitude
+    }
+    
+    var latitude:String{
+        return _latitude
+    }
+    
+    init(id: Int,zone:String,name:String,capacity:Int,rates:String,publicHolidayRates:String,dataProvider:String,vacancy:String,status:Int,longitude:String,latitude:String){
         _id = id
         _zone = zone
         _name = name
@@ -67,6 +76,8 @@ class CombinedData{
         _dataProvider = dataProvider
         _vacancy = vacancy
         _status = status
+        _longitude = longitude
+        _latitude = latitude
 
     }
     
