@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class CombinedData{
     private var _id: Int!
     private var _zone:String!
@@ -18,6 +19,7 @@ class CombinedData{
     private var _dataProvider: String!
     private var _vacancy :String!
     private var _status: Int!
+    private var _address:String!
     private var _longitude: String!
     private var _latitude:String!
     
@@ -57,6 +59,9 @@ class CombinedData{
      var status:Int{
      return _status
      }
+    var address:String{
+        return _address
+    }
     
     var longitude:String{
         return _longitude
@@ -66,7 +71,7 @@ class CombinedData{
         return _latitude
     }
     
-    init(id: Int,zone:String,name:String,capacity:Int,rates:String,publicHolidayRates:String,dataProvider:String,vacancy:String,status:Int,longitude:String,latitude:String){
+    init(id: Int,zone:String,name:String,capacity:Int,rates:String,publicHolidayRates:String,dataProvider:String,vacancy:String,status:Int,address:String,longitude:String,latitude:String){
         _id = id
         _zone = zone
         _name = name
@@ -76,6 +81,7 @@ class CombinedData{
         _dataProvider = dataProvider
         _vacancy = vacancy
         _status = status
+        _address = address
         _longitude = longitude
         _latitude = latitude
 

@@ -9,7 +9,7 @@
 import Foundation
 
 
-class ParkingLot{
+struct ParkingLot{
     private var _id: Int!
     private var _zone:String!
     private var _name: String!
@@ -17,6 +17,7 @@ class ParkingLot{
     private var _rates: String!
     private var _publicHolidayRates: String!
     private var _dataProvider: String!
+    private var _address:String!
     private var _longitude: String!
     private var _latitude:String!
     
@@ -50,6 +51,9 @@ class ParkingLot{
         return _dataProvider
     }
     
+    var address:String{
+        return _address
+    }
     
     var longitude:String{
         return _longitude
@@ -61,7 +65,7 @@ class ParkingLot{
     
     
     
-    init(id: Int,zone:String,name:String,capacity:Int,rates:String,publicHolidayRates:String,dataProvider:String,longitude:String,latitude:String){
+    init(id: Int,zone:String,name:String,capacity:Int,rates:String,publicHolidayRates:String,dataProvider:String,address:String,longitude:String,latitude:String){
         _id = id
         _zone = zone
         _name = name
@@ -69,6 +73,7 @@ class ParkingLot{
         _rates = rates
         _publicHolidayRates = publicHolidayRates
         _dataProvider = dataProvider
+        _address = address
         _longitude = longitude
         _latitude = latitude
         

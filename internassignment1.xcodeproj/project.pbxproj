@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1291F81CDAE6790088B009 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1291F51CDAE6790088B009 /* FBSDKCoreKit.framework */; };
+		5E1291F91CDAE6790088B009 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1291F61CDAE6790088B009 /* FBSDKLoginKit.framework */; };
+		5E1291FA1CDAE6790088B009 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1291F71CDAE6790088B009 /* FBSDKShareKit.framework */; };
+		5E1291FC1CDAE9F40088B009 /* FbButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1291FB1CDAE9F40088B009 /* FbButton.swift */; };
+		5E1291FE1CDAEA600088B009 /* LoginPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1291FD1CDAEA600088B009 /* LoginPageVC.swift */; };
+		5E1292011CDAEC090088B009 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1292001CDAEC090088B009 /* DataService.swift */; };
+		5E24DDBF1CDC421500F0D80B /* internassignment1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E24DDBE1CDC421500F0D80B /* internassignment1Tests.swift */; };
 		5E75972A1CD357D700D41BD3 /* DynamicParking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7597291CD357D700D41BD3 /* DynamicParking.swift */; };
 		5E7C89A31CD838FA00342EFC /* CombinedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C89A21CD838FA00342EFC /* CombinedData.swift */; };
+		5EA4802A1CD9A65300C22771 /* ParkingLotAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA480291CD9A65300C22771 /* ParkingLotAnnotation.swift */; };
 		5EC53C731CD0695A00CDE287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC53C721CD0695A00CDE287 /* AppDelegate.swift */; };
 		5EC53C751CD0695A00CDE287 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC53C741CD0695A00CDE287 /* ViewController.swift */; };
 		5EC53C781CD0695A00CDE287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC53C761CD0695A00CDE287 /* Main.storyboard */; };
@@ -20,9 +28,29 @@
 		9D71504AE8D33A6FAEA25742 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6494BF855748237AE59C3FB /* Pods.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5E24DDC11CDC421500F0D80B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EC53C671CD0695A00CDE287 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EC53C6E1CD0695A00CDE287;
+			remoteInfo = internassignment1;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5E1291F51CDAE6790088B009 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		5E1291F61CDAE6790088B009 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		5E1291F71CDAE6790088B009 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		5E1291FB1CDAE9F40088B009 /* FbButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FbButton.swift; sourceTree = "<group>"; };
+		5E1291FD1CDAEA600088B009 /* LoginPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageVC.swift; sourceTree = "<group>"; };
+		5E1292001CDAEC090088B009 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		5E24DDBC1CDC421500F0D80B /* internassignment1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = internassignment1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E24DDBE1CDC421500F0D80B /* internassignment1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = internassignment1Tests.swift; sourceTree = "<group>"; };
+		5E24DDC01CDC421500F0D80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E7597291CD357D700D41BD3 /* DynamicParking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicParking.swift; sourceTree = "<group>"; };
 		5E7C89A21CD838FA00342EFC /* CombinedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedData.swift; sourceTree = "<group>"; };
+		5EA480291CD9A65300C22771 /* ParkingLotAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingLotAnnotation.swift; sourceTree = "<group>"; };
 		5EC53C6F1CD0695A00CDE287 /* internassignment1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = internassignment1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC53C721CD0695A00CDE287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EC53C741CD0695A00CDE287 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,21 +67,60 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E24DDB91CDC421500F0D80B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EC53C6C1CD0695A00CDE287 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1291FA1CDAE6790088B009 /* FBSDKShareKit.framework in Frameworks */,
 				9D71504AE8D33A6FAEA25742 /* Pods.framework in Frameworks */,
+				5E1291F81CDAE6790088B009 /* FBSDKCoreKit.framework in Frameworks */,
+				5E1291F91CDAE6790088B009 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E1291F41CDAE66F0088B009 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				5E1291F51CDAE6790088B009 /* FBSDKCoreKit.framework */,
+				5E1291F61CDAE6790088B009 /* FBSDKLoginKit.framework */,
+				5E1291F71CDAE6790088B009 /* FBSDKShareKit.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		5E1291FF1CDAEBFA0088B009 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5E1292001CDAEC090088B009 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		5E24DDBD1CDC421500F0D80B /* internassignment1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5E24DDBE1CDC421500F0D80B /* internassignment1Tests.swift */,
+				5E24DDC01CDC421500F0D80B /* Info.plist */,
+			);
+			path = internassignment1Tests;
+			sourceTree = "<group>";
+		};
 		5E7C05F21CD1E1E200351276 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				5EE4460C1CD31DCD00265580 /* CustomTableViewCell.swift */,
+				5EA480291CD9A65300C22771 /* ParkingLotAnnotation.swift */,
+				5E1291FB1CDAE9F40088B009 /* FbButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -72,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC53C711CD0695A00CDE287 /* internassignment1 */,
+				5E24DDBD1CDC421500F0D80B /* internassignment1Tests */,
 				5EC53C701CD0695A00CDE287 /* Products */,
 				DEDE2E0116A1013784F2F609 /* Pods */,
 				A28CD4DC605EB245FD2C9B18 /* Frameworks */,
@@ -82,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC53C6F1CD0695A00CDE287 /* internassignment1.app */,
+				5E24DDBC1CDC421500F0D80B /* internassignment1Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +158,8 @@
 		5EC53C711CD0695A00CDE287 /* internassignment1 */ = {
 			isa = PBXGroup;
 			children = (
+				5E1291FF1CDAEBFA0088B009 /* Services */,
+				5E1291F41CDAE66F0088B009 /* Framework */,
 				5EE446091CD3071F00265580 /* Controller */,
 				5E7C05F31CD1E1E600351276 /* Model */,
 				5E7C05F21CD1E1E200351276 /* View */,
@@ -106,6 +177,7 @@
 			children = (
 				5EC53C741CD0695A00CDE287 /* ViewController.swift */,
 				5EE4460A1CD307C700265580 /* LotDetailsVC.swift */,
+				5E1291FD1CDAEA600088B009 /* LoginPageVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -130,6 +202,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E24DDBB1CDC421500F0D80B /* internassignment1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E24DDC51CDC421500F0D80B /* Build configuration list for PBXNativeTarget "internassignment1Tests" */;
+			buildPhases = (
+				5E24DDB81CDC421500F0D80B /* Sources */,
+				5E24DDB91CDC421500F0D80B /* Frameworks */,
+				5E24DDBA1CDC421500F0D80B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E24DDC21CDC421500F0D80B /* PBXTargetDependency */,
+			);
+			name = internassignment1Tests;
+			productName = internassignment1Tests;
+			productReference = 5E24DDBC1CDC421500F0D80B /* internassignment1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5EC53C6E1CD0695A00CDE287 /* internassignment1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EC53C811CD0695A00CDE287 /* Build configuration list for PBXNativeTarget "internassignment1" */;
@@ -160,6 +250,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Mohamad Asyraaf bin Abdul Rahman";
 				TargetAttributes = {
+					5E24DDBB1CDC421500F0D80B = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 5EC53C6E1CD0695A00CDE287;
+					};
 					5EC53C6E1CD0695A00CDE287 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -179,11 +273,19 @@
 			projectRoot = "";
 			targets = (
 				5EC53C6E1CD0695A00CDE287 /* internassignment1 */,
+				5E24DDBB1CDC421500F0D80B /* internassignment1Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E24DDBA1CDC421500F0D80B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EC53C6D1CD0695A00CDE287 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +347,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E24DDB81CDC421500F0D80B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E24DDBF1CDC421500F0D80B /* internassignment1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EC53C6B1CD0695A00CDE287 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,14 +362,26 @@
 				5EC53C751CD0695A00CDE287 /* ViewController.swift in Sources */,
 				5E7C89A31CD838FA00342EFC /* CombinedData.swift in Sources */,
 				5EE4460D1CD31DCD00265580 /* CustomTableViewCell.swift in Sources */,
+				5EA4802A1CD9A65300C22771 /* ParkingLotAnnotation.swift in Sources */,
 				5EC53C731CD0695A00CDE287 /* AppDelegate.swift in Sources */,
+				5E1292011CDAEC090088B009 /* DataService.swift in Sources */,
+				5E1291FE1CDAEA600088B009 /* LoginPageVC.swift in Sources */,
 				5EC53CA51CD0A01B00CDE287 /* ParkingLot.swift in Sources */,
+				5E1291FC1CDAE9F40088B009 /* FbButton.swift in Sources */,
 				5E75972A1CD357D700D41BD3 /* DynamicParking.swift in Sources */,
 				5EE4460B1CD307C700265580 /* LotDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E24DDC21CDC421500F0D80B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EC53C6E1CD0695A00CDE287 /* internassignment1 */;
+			targetProxy = 5E24DDC11CDC421500F0D80B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5EC53C761CD0695A00CDE287 /* Main.storyboard */ = {
@@ -281,6 +403,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5E24DDC31CDC421500F0D80B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = internassignment1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = M.a.internassignment1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/internassignment1.app/internassignment1";
+			};
+			name = Debug;
+		};
+		5E24DDC41CDC421500F0D80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = internassignment1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = M.a.internassignment1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/internassignment1.app/internassignment1";
+			};
+			name = Release;
+		};
 		5EC53C7F1CD0695A00CDE287 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -369,6 +515,11 @@
 			baseConfigurationReference = EE93DCBB5FC576A1E0156E83 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/internassignment1",
+				);
 				INFOPLIST_FILE = internassignment1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = M.a.internassignment1;
@@ -381,6 +532,11 @@
 			baseConfigurationReference = 87B35815AC62C7164B45B3A9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/internassignment1",
+				);
 				INFOPLIST_FILE = internassignment1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = M.a.internassignment1;
@@ -391,6 +547,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E24DDC51CDC421500F0D80B /* Build configuration list for PBXNativeTarget "internassignment1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E24DDC31CDC421500F0D80B /* Debug */,
+				5E24DDC41CDC421500F0D80B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5EC53C6A1CD0695A00CDE287 /* Build configuration list for PBXProject "internassignment1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

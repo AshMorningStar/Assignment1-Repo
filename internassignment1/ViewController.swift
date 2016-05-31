@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import MapKit
+import FBSDKLoginKit
+import FBSDKCoreKit
+import Firebase
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     
@@ -17,7 +20,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var searchBar: UISearchBar!
     var inSearchMode = false
     var refreshControl: UIRefreshControl!
- 
+    
     
     var parkingSpaces = [ParkingLot]()
  
@@ -70,7 +73,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             
             for var y = 0;y<dynamicParkingSpaces.count; y += 1 {
             if parkingSpaces[x].id == dynamicParkingSpaces[y].id{
-               let combinedData = CombinedData(id: parkingSpaces[x].id, zone: parkingSpaces[x].zone, name: parkingSpaces[x].name, capacity: parkingSpaces[x].capacity, rates: parkingSpaces[x].rates, publicHolidayRates: parkingSpaces[x].publicHolidayRates, dataProvider: parkingSpaces[x].dataProvider, vacancy: dynamicParkingSpaces[x].vacancy, status: dynamicParkingSpaces[x].status,longitude: parkingSpaces[x].longitude,latitude: parkingSpaces[x].latitude)
+                let combinedData = CombinedData(id: parkingSpaces[x].id, zone: parkingSpaces[x].zone, name: parkingSpaces[x].name, capacity: parkingSpaces[x].capacity, rates: parkingSpaces[x].rates, publicHolidayRates: parkingSpaces[x].publicHolidayRates, dataProvider: parkingSpaces[x].dataProvider, vacancy: dynamicParkingSpaces[x].vacancy, status: dynamicParkingSpaces[x].status,address:parkingSpaces[x].address,longitude: parkingSpaces[x].longitude,latitude: parkingSpaces[x].latitude)
                 
                 combinedDataArray.append(combinedData)
             
@@ -100,11 +103,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     let rates = items["rates"].stringValue
                     let publicHoildayRates = items["rates"].stringValue
                     let dataProvider = items["data_provider"].stringValue
+                    let address = items["address"].stringValue
                     let longitude = items["lon"].stringValue
                     let latitude = items["lat"].stringValue
+                    
                    // print(longitude)
                     
-                    let parkingLot = ParkingLot(id: id, zone: zone, name: name, capacity: capacity, rates: rates, publicHolidayRates: publicHoildayRates, dataProvider: dataProvider,longitude: longitude,latitude: latitude)
+                    let parkingLot = ParkingLot(id: id, zone: zone, name: name, capacity: capacity, rates: rates, publicHolidayRates: publicHoildayRates, dataProvider: dataProvider,address: address, longitude: longitude,latitude: latitude)
                     
                     self.parkingSpaces.append(parkingLot)
                                     }
@@ -224,7 +229,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             
             let lowerCase = searchBar.text!.lowercaseString
             
-            filteredCombinedDataArray = combinedDataArray.filter({$0.name.rangeOfString(lowerCase) != nil})
+            filteredCombinedDataArray = combinedDataArray.filter({$0.name.lowercaseString.rangeOfString(lowerCase) != nil})
            
             tableView.reloadData()
 

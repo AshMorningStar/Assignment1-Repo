@@ -9,7 +9,7 @@
 import Foundation
 
 
-class DynamicParking{
+ struct DynamicParking{
    private var _id: Int!
    private var _vacancy:String!
    private var _status:Int!
